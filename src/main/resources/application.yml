@@ -1,16 +1,23 @@
 server:
-  port: 8282
+  port: 9191
 spring:
-  security:
-    user:
-      name: bigcart
-      password: bigcart123
-      roles: ADMIN,USER
-security:
-  oauth2:
-    client:
-      client-id: main
-      client-secret: pin
-      access-token-validity-seconds: 3600
-      authorized-grant-types: refresh_token,authorization_code,password,client_credentials
-      scope: READ,WRITE
+  datasource:
+    #url: jdbc:mysql://localhost:3306/authDB?createDatabaseIfNotExist=true
+    url: jdbc:mysql://localhost:3306/authDB?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+
+    username: root
+    driver-class-name: com.mysql.jdbc.Driver
+    initialization-mode: always
+  jpa:
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+logging:
+  level:
+    org:
+      hibernate:
+        type: trace
