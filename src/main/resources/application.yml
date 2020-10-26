@@ -6,7 +6,7 @@ spring:
     url: jdbc:mysql://localhost:3306/authDB?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
 
     username: root
-    driver-class-name: com.mysql.jdbc.Driver
+#    driver-class-name: com.mysql.jdbc.Driver
     initialization-mode: always
   jpa:
     hibernate:
